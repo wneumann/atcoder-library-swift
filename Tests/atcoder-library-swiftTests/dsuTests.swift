@@ -1,5 +1,5 @@
 //
-//  dsuTest.swift
+//  dsuTests.swift
 //  
 //
 //  Created by sanjeev on 02/05/21.
@@ -8,15 +8,15 @@
 import XCTest
 @testable import atcoder_library_swift
 
-final class dsuTest : XCTestCase {
+final class dsuTests : XCTestCase {
 	
 	func testEmpty() {
-		var uf = dsu()
+		var uf = DSU()
 		XCTAssertEqual(uf.groups(), [])
 	}
 	
 	func testSimple() {
-		var uf = dsu(2)
+		var uf = DSU(2)
 		XCTAssertFalse(uf.same(0, 1))
 		let x = uf.merge(0, 1)
 		XCTAssertEqual(x, uf.leader(0))
@@ -27,7 +27,7 @@ final class dsuTest : XCTestCase {
 	
 	func testLine() {
 		let n = 500000
-		var uf = dsu(n)
+		var uf = DSU(n)
 		for i in stride(from: 0, to: n - 1, by: 1) {
 			uf.merge(i, i + 1)
 		}
@@ -37,7 +37,7 @@ final class dsuTest : XCTestCase {
 	
 	func testLineReverse() {
 		let n = 500000
-		var uf = dsu(n)
+		var uf = DSU(n)
 		for i in stride(from: n - 2, to: -1, by: -1) {
 			uf.merge(i, i + 1)
 		}
@@ -48,6 +48,8 @@ final class dsuTest : XCTestCase {
 	static var allTests = [
 		("testEmpty", testEmpty),
 		("testSimple", testSimple),
+		("testLine", testLine),
+		("testLineReverse", testLineReverse)
 	]
 	
 }

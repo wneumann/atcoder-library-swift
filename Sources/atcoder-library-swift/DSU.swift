@@ -1,5 +1,5 @@
 //
-//  dsu.swift
+//  DSU.swift
 //  
 //
 //  Created by sanjeev on 02/05/21.
@@ -8,7 +8,7 @@
 /// Disjoint Set Union Data Structure
 /// 	- Union by size
 /// 	- Path compression
-struct dsu {
+struct DSU {
 	
 	private var _n: Int
 	private var _parent: [Int]

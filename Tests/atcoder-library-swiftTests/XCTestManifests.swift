@@ -4,7 +4,8 @@ import XCTest
 public func allTests() -> [XCTestCaseEntry] {
     return [
         testCase(atcoder_library_swiftTests.allTests),
-		testCase(dsuTest.allTests),
+		testCase(dsuTests.allTests),
+		testCase(fenwickTreeTests.allTests),
     ]
 }
 #endif
