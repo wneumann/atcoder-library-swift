@@ -39,10 +39,74 @@ struct Math {
 	}
 	
 	/**
+	* fast primality testing for integers of size upto 64 bytes
+	*/
+	public func isPrime(_ n: Int64) -> Bool {
+		if (n <= 1) {
+			return false
+		}
+		if (n == 2 || n == 7 || n == 61) {
+			return true
+		}
+		if (n % 2 == 0) {
+			return false
+		}
+		var d = n - 1
+		while (d % 2 == 0) {
+			d /= 2
+		}
+		let bases: [Int64] = [2, 7, 61]
+		var prime = true
+		bases.forEach { a in
+			var t = d
+			var y = modPow(x: a, y: t, m: n)
+			while (t != n - 1 && y != 1 && y != n - 1) {
+				y = (y * y) % n
+				t <<= 1
+			}
+			if (y != n - 1 && t % 2 == 0) {
+				prime = false
+			}
+		}
+		return prime
+	}
+	
+	/**
+	* returns pair(g, z) such that g = gcd(x, y), zx = g (mod y), 0 <= z < y / g
+	*/
+	public func inverseGcd(_ x: Int64, _ y: Int64) -> (Int64, Int64) {
+		var a = x
+		let b = y
+		a = safeMod(a, b)
+		if (a == 0) {
+			return (b, 0)
+		}
+		var s = b
+		var t = a
+		var m0: Int64 = 0
+		var m1: Int64 = 1
+		while (t > 0) {
+			let u: Int64 = s / t
+			s -= t * u
+			m0 -= m1 * u
+			var temp = s
+			s = t
+			t = temp
+			temp = m0
+			m0 = m1
+			m1 = temp
+		}
+		if (m0 < 0) {
+			m0 += b / s
+		}
+		return (s, m0)
+	}
+	
+	/**
 	* calculates a % m safely even for -ve 'a'
 	* using formula a % m = (a + m) % m
 	*/
-	private func safeMod(_ a: Int64, _ m: Int64) -> Int64 {
+	public func safeMod(_ a: Int64, _ m: Int64) -> Int64 {
 		if (a < 0) {
 			return (a + m) % m
 		} else {
