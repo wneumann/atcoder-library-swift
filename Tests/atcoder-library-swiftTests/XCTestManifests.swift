@@ -6,6 +6,7 @@ public func allTests() -> [XCTestCaseEntry] {
         testCase(atcoder_library_swiftTests.allTests),
 		testCase(dsuTests.allTests),
 		testCase(fenwickTreeTests.allTests),
+		testCase(mathTests.allTests),
     ]
 }
 #endif
