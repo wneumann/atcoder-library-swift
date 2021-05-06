@@ -18,4 +18,7 @@ Swift version of [Atcoder Library](https://github.com/atcoder/ac-library) for Co
 - [ ] Graph Algorithms
 
 # Contributing
-You can improve the project either by [creating a PR](https://github.com/codersanjeev/atcoder-library-swift/compare) or [submitting an issue](https://github.com/codersanjeev/atcoder-swift-library/issues/new) on GitHub.  
+You can improve the project either by [creating a PR](https://github.com/codersanjeev/atcoder-library-swift/compare) or [submitting an issue](https://github.com/codersanjeev/atcoder-swift-library/issues/new) on GitHub. In case, you want to talk, feel free to reach out:\
+<a href="https://twitter.com/codersanjeev"><img src="https://github.com/aritraroy/social-icons/blob/master/twitter-icon.png?raw=true" width="60"></a>
+<a href="https://linkedin.com/in/codersanjeev"><img src="https://github.com/aritraroy/social-icons/blob/master/linkedin-icon.png?raw=true" width="60"></a>
+<a href="https://instagram.com/codersanjeev"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
