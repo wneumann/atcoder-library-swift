@@ -8,7 +8,7 @@ Swift version of [Atcoder Library](https://github.com/atcoder/ac-library) for Co
 - IDE
     - XCode 12.5
 - Language
-    - Swift 5.4
+    - Swift 5.3
 
 # Implementation
 - [x] Disjoint Set Union (DSU)
