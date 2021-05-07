@@ -6,19 +6,20 @@
 //
 
 import XCTest
+import Foundation
+
 @testable import atcoder_library_swift
 
 final class stringTests : XCTestCase {
 	
 	private func zAlgorithmNaive(_ s: String) -> [Int] {
-		let n = s.count
-		var z = Array(repeating: 0, count: n)
-		for i in 0..<n {
-			while (i + z[i] < n && s[z[i]] == s[i + z[i]]) {
-				z[i] += 1
-			}
-		}
-		return z
+    var slice = s[...]
+    var z: [Int] = []
+    while !slice.isEmpty {
+      z.append(s.commonPrefix(with: slice).count)
+      slice = slice.dropFirst()
+    }
+    return z
 	}
 	
 	func testzAlgorithm() {
